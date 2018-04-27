@@ -332,7 +332,7 @@ if __name__ == "__main__":
 
         # 下面仅仅计算了语音特征相应的最长的长度。
         # 如果仅仅是计算长度是否需要施加变换后计算长度？
-        parallel_read = False
+        parallel_read = True
         if parallel_read:
             wav_max_len = np.max(Parallel(n_jobs=7)(delayed(get_wav_length)(wav) for wav in wav_files))
         else:
